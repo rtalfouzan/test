@@ -4,3 +4,4 @@ numpy==1.19.2
 spacy==2.2.4
 sklearn
 gensim
+GoogleNews
