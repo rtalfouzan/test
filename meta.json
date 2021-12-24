@@ -1,0 +1,1 @@
+{"lang":"ar","name":"model","version":"0.0.0","spacy_version":">=2.2.4","description":"","author":"","email":"","url":"","license":"","vectors":{"width":300,"vectors":1476715,"keys":1476715,"name":"ar_model.vectors"},"pipeline":[],"factories":{},"labels":{}}
