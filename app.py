@@ -12,11 +12,11 @@ import sklearn
 from sklearn.metrics import classification_report, recall_score, precision_score, accuracy_score, f1_score
 from sklearn.metrics.pairwise import cosine_similarity
 
-nlp = spacy.load("spacy.aravec.model")
+#nlp = spacy.load("spacy.aravec.model")
 
 
 st.write("""
-testing testing
+HELLO testing
 """)
 
 
