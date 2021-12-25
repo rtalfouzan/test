@@ -147,7 +147,6 @@ if len(tx) != 0:
         desc =result[i]['desc']
         result_text2['Text'].append(desc) 
     
-
    # st.markdown(f"result at 1: { res         }")
     googlenews.clear()
 
