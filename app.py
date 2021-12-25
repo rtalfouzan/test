@@ -106,50 +106,50 @@ class Preprocessor:
 #--------------------------------------------------------------------------------------------------------------- 
 #----------------------------------------- END OF PRE-PROCESSING------------------------------------------------ 
 #--------------------------------------------------------------------------------------------------------------- 
+if len(tx) != 0:
+    googlenews = GoogleNews(lang='ar')
+    googlenews.clear()
 
-googlenews = GoogleNews(lang='ar')
-googlenews.clear()
+    f =0 
+    Prediction =''
+    top_similar_ind =''
+    top_similar_news =''
+    medium =''
+    top_similar_ind2 =''
+    tp_desc =''
 
-f =0 
-Prediction =''
-top_similar_ind =''
-top_similar_news =''
-medium =''
-top_similar_ind2 =''
-tp_desc =''
-
-st.markdown(f"Searching for: { tx         }")
-
-
-tx = clean_hashtag(tx)
-tx = clean_str(tx) 
+    st.markdown(f"Searching for: { tx         }")
 
 
-googlenews.search(tx)
-result = googlenews.page_at(1)
+    tx = clean_hashtag(tx)
+    tx = clean_str(tx) 
 
-if len(result) == 0:
-  Prediction ='Fake'
-  top_similar_news ='لا يوجد اخبار مماثله'
-  medium ='لا يوجد مصدر'
-  tp_desc ='لا يوجد وصف'
 
-else:
-  result_text = {"Text":[]}
-    #google search
-  for i in range(len(result)):
-    title =result[i]['title']
-    result_text['Text'].append(title)
+    googlenews.search(tx)
+    result = googlenews.page_at(1)
 
-  result_text2 = {"Text":[]}
-    #google search
-  for i in range(len(result)):
-    desc =result[i]['desc']
-    result_text2['Text'].append(desc) 
-res = result[1]['desc']
+    if len(result) == 0:
+      Prediction ='Fake'
+      top_similar_news ='لا يوجد اخبار مماثله'
+      medium ='لا يوجد مصدر'
+      tp_desc ='لا يوجد وصف'
 
-st.markdown(f"result at 1: { res         }")
-googlenews.clear()
+    else:
+      result_text = {"Text":[]}
+        #google search
+      for i in range(len(result)):
+        title =result[i]['title']
+        result_text['Text'].append(title)
+
+      result_text2 = {"Text":[]}
+        #google search
+      for i in range(len(result)):
+        desc =result[i]['desc']
+        result_text2['Text'].append(desc) 
+    res = result[1]['desc']
+
+    st.markdown(f"result at 1: { res         }")
+    googlenews.clear()
 
 '''
 
